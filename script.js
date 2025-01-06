@@ -19,6 +19,8 @@ document.querySelector('.check').addEventListener('click', function(){
     //every text innput is string type in js, we need to convert to number
     if(!guess){
         getMessage('Please enter number to continue!')
+    }else if(guess < 1 || guess > 20){
+        getMessage('Please enter number between 1 and 20')
     }else if(score > 0){
         if(secretNumber !== guess){
             getMessage(secretNumber < guess ? 'Too High!' : 'Too low!');
